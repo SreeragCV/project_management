@@ -20,4 +20,4 @@ function SelectedProject({project}) {
   )
 }
 
-export default SelectedProject
+export default SelectedProject;
