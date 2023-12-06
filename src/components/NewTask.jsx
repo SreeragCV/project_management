@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 
 function NewTask({onAdd}) {
 
-  const [enteredtask, setEnteredtask] = useState();
+  const [enteredtask, setEnteredtask] = useState('');
 
   function handleChange(e){
     setEnteredtask(e.target.value)
@@ -12,7 +12,6 @@ function NewTask({onAdd}) {
   function handleClick(){
     onAdd(enteredtask);
     setEnteredtask('');
-    console.log(enteredtask);
   }
 
   return (

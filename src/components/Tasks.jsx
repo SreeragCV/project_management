@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NewTask from "./NewTask";
 
-function Tasks({ tasks, onAdd }) {
+function Tasks({ tasks, onAdd, onDelete }) {
   return (
     <section>
       <h2 className="text-2xl font-bold text-stone-700 mb-4">TASKS</h2>
@@ -17,7 +17,7 @@ function Tasks({ tasks, onAdd }) {
             return (
               <li key={task.id} className="flex justify-between my-4">
                 <span className=" text-gray-900">{task.text}</span>
-                <button className="text-stone-700 hover:text-red-500">Clear</button>
+                <button onClick={() => onDelete(task.id) } className="text-stone-700 hover:text-red-500">Clear</button>
               </li>
             );
           })}
