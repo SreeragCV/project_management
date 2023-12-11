@@ -1,12 +1,13 @@
 import React from 'react'
 import Tasks from './Tasks.jsx';
 
-function SelectedProject({project, onDelete, onAddTask, tasks, onDeleteTask}) {
+function SelectedProject({project, onDelete, onAddTask, tasks, onDeleteTask, selectedTask}) {
     const formatedDate = new Date(project.dueDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
         day: 'numeric'
     })
+
   return (
     <div className='w-[35rem] mt-16'>
       <header className="pb-4 mb-4 border-b-2 border-stone-300">
@@ -17,7 +18,7 @@ function SelectedProject({project, onDelete, onAddTask, tasks, onDeleteTask}) {
         <p className='mb-4 text-stone-400'>{formatedDate}</p>
         <p className='text-stone-600 whitespace-pre-wrap'>{project.description}</p>
       </header>
-      <Tasks tasks={tasks} onAdd={onAddTask} onDelete={onDeleteTask} />
+      <Tasks tasks={tasks} onAdd={onAddTask} onDelete={onDeleteTask} selectedTask={selectedTask}/>
     </div>
   )
 }
