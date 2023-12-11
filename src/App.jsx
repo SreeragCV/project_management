@@ -28,7 +28,7 @@ function App() {
 
   function handleAddTask(text) {
     setProjectsState((prevState) => {
-      const taskId = Math.random() 
+      const taskId = Math.random();
       const newTask = {
         text: text,
         projectId: prevState.selectedProjectId,
@@ -116,7 +116,7 @@ function App() {
       onDelete={handleDelete}
       project={selectedProject}
       onAddTask={handleAddTask}
-      task={projectsState.tasks}
+      tasks={projectsState.tasks}
       onDeleteTask={handleDeleteTask}
     />
   );
